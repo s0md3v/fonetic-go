@@ -25,9 +25,11 @@ Fonetic is a library to assess pronounceablility of a given text. For more infor
 
 fonetic is minimal and can be implemented in just 2 lines of code as follows:
 
-```python
+```golang
+package main
+
 import (
-    "https://github.com/s0md3v/fonetic-go"
+    "github.com/s0md3v/fonetic-go"
 )
 
 func main(){
