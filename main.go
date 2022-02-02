@@ -714,7 +714,7 @@ func Count(str string) (int, int, int) {
 		} else {
 			bigram := current_char + next_char
 			value := bigrams[bigram]
-			if value[0] == "0" {
+			if len(value) == 0 || value[0] == "0" {
 				bad++
 			} else if value[0] == "1" {
 				good++
