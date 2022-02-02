@@ -29,16 +29,26 @@ fonetic is minimal and can be implemented in just 2 lines of code as follows:
 package main
 
 import (
-    "github.com/s0md3v/fonetic-go"
+  "github.com/s0md3v/fonetic-go"
 )
+
+ /*
+ This is just an example, don't copy-paste this. Use fonetic.Count's output according to your needs.
+ */
 
 func main(){
   total, good, bad := fonetic.Count("your string here")
-  // your logic here
+  if (good/total) > 70 || (bad == 0 && total < 2)) {
+    fmt.Println("TEXT")
+  } else {
+    fmt.Println("RANDOM")
+  }
 }
 ```
 
 Where,
 - **total**: total number of bigrams
 - **good**: number of pronounceable bigrams
-- **total**: number of non-pronounceable bigrams
+- **bad**: number of non-pronounceable bigrams
+
+> Note: Non-alphabetic characters do not count as `good` or `bad`, but they do count in `total`. It means the output for `aa1323423634` would be `total=11,good=1,bad=0`.
