@@ -711,7 +711,7 @@ func Count(str string) (int, int, int) {
 			previous_char = current_char
 			i++
 			continue
-		} else {
+		} else if isAlpha(current_char){
 			bigram := current_char + next_char
 			value := bigrams[bigram]
 			if len(value) == 0 || value[0] == "0" {
