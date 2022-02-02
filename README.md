@@ -34,6 +34,7 @@ import (
 
 func main(){
   total, good, bad := fonetic.Count("your string here")
+  // your logic here
 }
 ```
 
