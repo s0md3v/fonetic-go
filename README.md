@@ -30,17 +30,19 @@ import (
   "github.com/s0md3v/fonetic-go"
 )
 
- /*
- This is just an example, don't copy-paste this. Use fonetic.Count's output according to your needs.
- */
+/*
+This is just an example, don't copy-paste this. Use fonetic.Count's output according to your needs.
+And don't limit yourself to just detecting randomness, go wild - find other uses ;)
+*/
 
-func main(){
-  total, good, bad := fonetic.Count("your string here")
-  if (good/total) > 70 || (bad == 0 && total < 2)) {
-    fmt.Println("TEXT")
-  } else {
-    fmt.Println("RANDOM")
-  }
+func isRandom(str string) bool {
+	total, good, bad := fonetic.Count(str)
+	if total - (good+bad) > total/2 { // checks if there are too many non-alpha chars
+		return true
+	} else if good*100/total > 70 { // checks if at least 70% of the string is pronounceable
+		return false
+	}
+	return true
 }
 ```
 
