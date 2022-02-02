@@ -23,8 +23,6 @@ Fonetic is a library to assess pronounceablility of a given text. For more infor
 
 ### Documentation
 
-fonetic is minimal and can be implemented in just 2 lines of code as follows:
-
 ```golang
 package main
 
